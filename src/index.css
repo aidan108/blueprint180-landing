@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Fira Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-condensed: 'Fira Sans Condensed', sans-serif;
+    --font-extra-condensed: 'Fira Sans Extra Condensed', sans-serif;
+
+    --background: 220 20% 9%;
+    --foreground: 38 25% 92%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 38 25% 92%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 38 25% 92%;
+
+    --primary: 28 75% 50%;
+    --primary-foreground: 220 20% 9%;
+
+    --secondary: 220 14% 15%;
+    --secondary-foreground: 38 25% 92%;
+
+    --muted: 220 12% 18%;
+    --muted-foreground: 30 10% 52%;
+
+    /* Multi-colour accents — Warm Earth palette */
+    --accent: 28 75% 50%;
+    --accent-foreground: 220 20% 9%;
+
+    --coral: 16 55% 48%;
+    --rose: 345 45% 52%;
+    --mint: 155 35% 42%;
+    --sky: 195 40% 45%;
+    --gold: 38 65% 52%;
+    --lavender: 265 30% 55%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 38 25% 92%;
+
+    --border: 220 12% 16%;
+    --input: 220 12% 16%;
+    --ring: 28 75% 50%;
+
+    --radius: 0.25rem;
+
+    --gradient-warm: linear-gradient(135deg, hsl(28, 75%, 50%), hsl(16, 55%, 42%));
+    --gradient-warm-soft: linear-gradient(135deg, hsl(28, 75%, 50% / 0.12), hsl(16, 55%, 42% / 0.04));
+    --gradient-section: linear-gradient(180deg, hsl(220, 20%, 9%), hsl(220, 18%, 11%), hsl(220, 20%, 9%));
+    --gradient-coral: linear-gradient(135deg, hsl(16, 55%, 48%), hsl(345, 45%, 45%));
+    --gradient-mint: linear-gradient(135deg, hsl(155, 35%, 42%), hsl(170, 30%, 36%));
+    --gradient-sky: linear-gradient(135deg, hsl(195, 40%, 45%), hsl(210, 35%, 42%));
+    --gradient-gold: linear-gradient(135deg, hsl(38, 65%, 52%), hsl(28, 75%, 50%));
+    --gradient-rose: linear-gradient(135deg, hsl(345, 45%, 52%), hsl(16, 55%, 45%));
+    --gradient-vibrant: linear-gradient(135deg, hsl(28, 75%, 50%), hsl(345, 45%, 48%), hsl(265, 30%, 50%));
+    --gradient-lavender: linear-gradient(135deg, hsl(265, 30%, 55%), hsl(290, 25%, 48%));
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 25 95% 55%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 18% 14%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 14% 15%;
+    --sidebar-ring: 25 95% 55%;
+  }
+
+  /* hear.ai-inspired theme — neutral charcoal + salmon coral */
+  .hear-theme {
+    --font-heading: 'DM Sans', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-condensed: 'DM Sans', sans-serif;
+    --font-extra-condensed: 'DM Sans', sans-serif;
+
+    --background: 0 0% 13%;
+    --foreground: 25 30% 90%;
+    --card: 0 0% 16%;
+    --card-foreground: 25 30% 90%;
+    --popover: 0 0% 16%;
+    --popover-foreground: 25 30% 90%;
+    --primary: 14 74% 66%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 19%;
+    --secondary-foreground: 25 30% 90%;
+    --muted: 0 0% 22%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 14 74% 66%;
+    --accent-foreground: 0 0% 10%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 14 74% 66%;
+    --coral: 14 74% 66%;
+    --mint: 160 30% 48%;
+    --gold: 30 45% 55%;
+    --gradient-warm: linear-gradient(135deg, hsl(14, 74%, 66%), hsl(8, 60%, 56%));
+    --gradient-mint: linear-gradient(135deg, hsl(160, 30%, 48%), hsl(170, 25%, 42%));
+    --gradient-gold: linear-gradient(135deg, hsl(30, 45%, 55%), hsl(20, 50%, 50%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .font-condensed {
+    font-family: var(--font-condensed);
+  }
+  .font-extra-condensed {
+    font-family: var(--font-extra-condensed);
+  }
+  .text-gradient-warm {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-coral {
+    background: var(--gradient-coral);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-mint {
+    background: var(--gradient-mint);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-sky {
+    background: var(--gradient-sky);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-vibrant {
+    background: var(--gradient-vibrant);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-lavender {
+    background: var(--gradient-lavender);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-rose {
+    background: var(--gradient-rose);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .bg-gradient-warm-soft {
+    background: var(--gradient-warm-soft);
+  }
+  .bg-gradient-section {
+    background: var(--gradient-section);
+  }
+  .bg-gradient-coral {
+    background: var(--gradient-coral);
+  }
+  .bg-gradient-mint {
+    background: var(--gradient-mint);
+  }
+  .bg-gradient-sky {
+    background: var(--gradient-sky);
+  }
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .triangle-motif::before {
+    content: '▲';
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.5em;
+    color: hsl(25, 95%, 55% / 0.3);
+    margin-bottom: 2rem;
+  }
+}
